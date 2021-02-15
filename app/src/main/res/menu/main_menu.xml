@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ex1"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="ex1"/>
+
+    <item
+        android:id="@+id/ex2"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="ex2"/>
+
+    <item
+        android:id="@+id/ex3"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="ex3"/>
+
+    <item
+        android:id="@+id/ex4"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="ex4"/>
+
+</menu>
