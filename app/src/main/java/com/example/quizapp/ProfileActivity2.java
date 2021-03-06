@@ -31,8 +31,8 @@ public class ProfileActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile2);
 
-
-        toolbar = findViewById(R.id.tb);
+        setSupportActionBar(findViewById(R.id.tb));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         img1 = findViewById(R.id.profileimg);
         pu = findViewById(R.id.profileusername);
 
