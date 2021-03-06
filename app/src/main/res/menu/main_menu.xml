@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/ex1"
+        android:id="@+id/home"
         android:enabled="true"
-        android:icon="@drawable/profile"
-        android:title="ex1"/>
+        android:icon="@drawable/home"
+        android:title="Home"/>
 
     <item
-        android:id="@+id/ex2"
+        android:id="@+id/kbc"
         android:enabled="true"
         android:icon="@drawable/profile"
-        android:title="ex2"/>
+        android:title="KBC"/>
 
     <item
-        android:id="@+id/ex3"
+        android:id="@+id/leaderboards"
         android:enabled="true"
-        android:icon="@drawable/profile"
-        android:title="ex3"/>
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Leader Boards"/>
 
     <item
-        android:id="@+id/ex4"
+        android:id="@+id/profile"
         android:enabled="true"
-        android:icon="@drawable/profile"
-        android:title="ex4"/>
+        android:icon="@drawable/profile_icon"
+        android:title="Profile"/>
 
 </menu>

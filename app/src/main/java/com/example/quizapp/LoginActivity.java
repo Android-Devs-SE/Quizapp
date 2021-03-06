@@ -8,93 +8,51 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText logemail,logpass,forgotpassword;
+
+    EditText logemail,logpass;
     Button login;
     FirebaseAuth mAuth;
     ProgressDialog progressDialog;
-    TextView register,forgotpass;
+    TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         logemail = findViewById(R.id.logemail);
         logpass = findViewById(R.id.logpassword);
         login = findViewById(R.id.login);
         mAuth = FirebaseAuth.getInstance();
         register = findViewById(R.id.register);
-        forgotpass = findViewById(R.id.forgotpassword);
-        forgotpassword = findViewById(R.id.forgotpass1);
         progressDialog = new ProgressDialog(this);
         progressDialog.setCanceledOnTouchOutside(false);
 
 
-        forgotpass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                EditText editText = new EditText(v.getContext());
-
-
-                AlertDialog.Builder passwordrester = new AlertDialog.Builder(v.getContext());
-                passwordrester.setTitle("Reset Password");
-                passwordrester.setMessage("Enter Your Email To Reset Your Password");
-                passwordrester.setView(editText);
-
-                passwordrester.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-
-                        String mail = editText.getText().toString();
-                        mAuth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-
-                                if (task.isSuccessful()){
-
-                                    Toast.makeText(LoginActivity.this, "Reset Link Set To Your Email", Toast.LENGTH_SHORT).show();
-
-                                }else {
-
-                                    String Message = task.getException().getMessage();
-                                    Toast.makeText(LoginActivity.this, ""+Message, Toast.LENGTH_SHORT).show();
-
-                                }
-                            }
-                        });
-                        }
-                });
-
-                passwordrester.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-
-                passwordrester.create().show();
-
-
-            }
-        });
 
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -136,11 +96,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     signinuserwith(logmail,logpassword);
 
+
                 }
             }
         });
 
     }
+
 
     private void signinuserwith(String logmail, String logpassword) {
 
