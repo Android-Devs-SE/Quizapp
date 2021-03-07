@@ -1,0 +1,98 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background__1_">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="221dp">
+
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/timer"
+           android:textStyle="bold|italic"
+           android:textColor="@color/white"
+           android:textSize="70dp"
+           android:id="@+id/time"
+           android:layout_marginLeft="30dp"
+           android:layout_marginTop="30dp"
+           android:text="1"/>
+
+        <TextView
+            android:id="@+id/qno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/qtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="Question"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp">
+
+            <Button
+                android:id="@+id/a"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:layout_marginTop="30dp"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:onClick="Buclick"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_trans"/>
+
+            <Button
+                android:id="@+id/b"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="30dp"
+                android:onClick="Buclick"
+                android:background="@drawable/button_trans"/>
+
+            <Button
+                android:id="@+id/c"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:textSize="30dp"
+                android:onClick="Buclick"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_trans"/>
+
+            <Button
+                android:id="@+id/d"
+                android:layout_height="wrap_content"
+                android:text="D"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_marginTop="30dp"
+                android:onClick="Buclick"
+                android:layout_width="350dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_trans"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
