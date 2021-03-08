@@ -22,6 +22,7 @@ public class Anime_10_hard extends AppCompatActivity
     private List<ComicsModel> qlist;
     Button a,b,c,d;
     private int qno;
+    int score;
     private CountDownTimer countDownTimer;
 
     @Override
@@ -39,6 +40,7 @@ public class Anime_10_hard extends AppCompatActivity
 
         qlist = new ArrayList<>();
         getData();
+        score = 0;
     }
 
     private void getData() {
@@ -94,7 +96,7 @@ public class Anime_10_hard extends AppCompatActivity
     }
 
     private void startTimer() {
-        countDownTimer = new CountDownTimer(11000, 1000)            //Method for countdown timer, with countdown time and interval in miliseconds
+        countDownTimer = new CountDownTimer(26000, 1000)            //Method for countdown timer, with countdown time and interval in miliseconds
         {
             public void onTick(long millisUntilFinished) {
 
@@ -133,7 +135,8 @@ public class Anime_10_hard extends AppCompatActivity
         }
         else
         {
-            Intent intent  = new Intent(Anime_10_hard.this,MainActivity.class);
+            Intent intent  = new Intent(Anime_10_hard.this,ScoreActivity.class);
+            intent.putExtra("SCORE",String.valueOf(score));
             startActivity(intent);
         }
     }
@@ -204,17 +207,21 @@ public class Anime_10_hard extends AppCompatActivity
         {
             case R.id.a :
                 selectid =1;
+                break;
             case R.id.b :
                 selectid =2;
+                break;
 
             case R.id.c :
                 selectid =3;
+                break;
 
             case R.id.d :
                 selectid =4;
+                break;
 
             default:
-                selectid = 0;
+
         }
         countDownTimer.cancel();
         checkanswer(selectid,view);
@@ -225,7 +232,7 @@ public class Anime_10_hard extends AppCompatActivity
         if (selectid == qlist.get(qno).getAnswer())
         {
             ((Button)view).setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
-
+            score = score + 100;
         }
         else
         {
@@ -246,6 +253,7 @@ public class Anime_10_hard extends AppCompatActivity
                     d.setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
                     break;
             }
+            score = score +0;
         }
 
         changequestion();
